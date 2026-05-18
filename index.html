@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamiento Profesional - Herramientas Industriales</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1a1c1c",
+                        "primary": "#705d00",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#ffe16d",
+                        "on-primary-fixed": "#221b00",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "background": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#e4e2e1",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#5f5f5f",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#705d00",
+                        "secondary": "#5f5e5e",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#636262",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-background": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#705e00",
+                        "outline": "#7e775f",
+                        "on-surface-variant": "#4d4732",
+                        "tertiary-container": "#dbd9d9",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-container": "#ffd700",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary-container": "#e2dfde",
+                        "outline-variant": "#d0c6ab",
+                        "inverse-primary": "#e9c400",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#5f5e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "section-padding": "80px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-shadow {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .tonal-border {
+            border: 1px solid #E0E0E0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container">
+    <!-- TopNavBar -->
+    <header class="bg-surface/95 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm transition-all duration-200 ease-in-out">
+        <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+            <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">Equipamiento Profesional</a>
+            
+            <button id="hamburger-menu" class="md:hidden text-primary" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+           <div id="nav-menu" class="hidden md:flex flex-col md:flex-row gap-6 md:gap-8 items-center absolute md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent p-6 md:p-0 shadow-lg md:shadow-none">
+    <a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="index.html">Inicio</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="galeria.html">Galería</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="productos.html">Productos</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="servicios.html">Servicios</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+</div>
+
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors" data-search-btn aria-label="Buscar">
+                    <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+                <a href="productos.html" class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative" aria-label="Carrito">
+                    <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                    <span class="absolute top-0 right-0 bg-primary text-on-primary text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden" data-cart-count>0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center bg-on-surface overflow-hidden">
+            <div class="absolute inset-0 opacity-40">
+                <img alt="Maquinaria pesada" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpn7ZcCveVmQTKJXQi3yLtkwqb_J4Q_cwR--LQQgproLzmicGr78MRugGZ3N4Hy-ODFs_DjIY2l_ay4DW3dC-TKaMkKMBOvHOrSWNmKbiSW_5WaUU1YNNuB1nY7nkSmCQwb9GvcGvaO18jkUH365eL-cXBiopuRr-UpOYmOWl4pfjgEGzGeezJykNsi1Ojl52oySfLqZcL1h0NCOo94qGjVu_CCotiw6X1Qh7xwB8d-3RHyj5U8bN-1b8Rm1hEHSCqitSKd9pX7q8">
+            </div>
+            <div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+                <div class="max-w-2xl">
+                    <h1 class="font-headline-lg-mobile md:font-display-lg text-white mb-6">Todo para tu construcción en un solo lugar</h1>
+                    <p class="font-body-lg text-body-lg text-surface-variant mb-10 leading-relaxed">
+                        Suministramos equipos de alto rendimiento y herramientas de precisión para proyectos industriales a gran escala. Calidad certificada y soporte técnico especializado en Bolivia.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="productos.html" class="px-8 py-4 bg-primary-container text-on-primary-fixed font-bold text-label-md uppercase tracking-widest hover:bg-[#E6C200] transition-colors">
+                            Ver Productos
+                        </a>
+                        <a href="contacto.html" class="px-8 py-4 border-2 border-white text-white font-bold text-label-md uppercase tracking-widest hover:bg-white hover:text-on-surface transition-all">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg mb-2">Equipamiento Destacado</h2>
+                    <p class="text-on-surface-variant font-body-md">Herramientas de grado industrial para máxima eficiencia.</p>
+                </div>
+                <a class="text-primary font-bold uppercase tracking-wider text-label-md hover:underline" href="productos.html">Ver catálogo completo</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                        <img alt="Taladro Industrial" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdiAs4Iy6bw0VK3Pt8iXs6rwboxqLOHEzFiOI7oM2saFsUk93_R1f1JXwo3uWJd5tLVyT1CQPTcGZMax9mT7ENX-lNjnpBB869-v80SlZLE3nTfvdN3o74qf8lz_73nZFxkFe-Vq4qqrryVXcj-UusI_vkNpkFwlHJrABq68oeRpStAXmdt9Y0aeqCWuXPhJEk6wpPxKV4ozvj6TUUcYGaZpeTMefX0LcHdA3lpevfkG-B5qKV9aZFdYZA_dz2V3glqa5fmAfvnYA">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Categoría: Perforación</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Taladro Industrial XR</h3>
+                        <p class="text-on-surface-variant font-body-md mb-4 line-clamp-2">Motor sin escobillas de alto par diseñado para trabajos continuos en acero estructural.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-headline-md">Bs. 3.450</span>
+                            <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Taladro Industrial XR" data-price="3450">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                        <img alt="Martillo Profesional" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvHmOfZBAg25ZYPLJx2V2tGTzewUCl-o9Gw8GzGBEb5CP2-OtB8FYXG9KgUsYhXmi2l5M21C88mrqEPnOIs416QkBia8Xpyt2mlrDNzNdkVKx8B-2uSsqlMaVcvGbrLCiG1Tc466v465RP3wZ1ZnGP9manK18f0Otfum2XTOrmRfD8ZCLV5JFccz0NVxuej1Ze2zPJCx_eFhIzylrCtADwEXZwsGu8Qa5XxZWupI_DVg9ZoTQvAP-TrHtVhiwGsr2MgQ8hsOhGRY">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Categoría: Demolición</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Martillo Neumático Pro</h3>
+                        <p class="text-on-surface-variant font-body-md mb-4 line-clamp-2">Sistema de reducción de vibración y fuerza de impacto de 25 Julios para concreto armado.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-headline-md">Bs. 5.120</span>
+                            <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Martillo Neumático Pro" data-price="5120">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                        <img alt="Amoladora Angular" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5kYTgRuIrLKl2A_Hsm-YSUPYdMZ_9aKPELmBPanztifLsT1OgfDu8Yw7qj4LDCE2zbZzDIVgWmJr9_I8HkIGp1IphyUn3ESBWp0-KCf1rSwc4tGLn27s4eTIJ78Pd9-gmdBB25AY285N2y0PbVQYTYWvdT7z5uDB0j0f1DmShjkxxYym4YXqwZd2zGD8accCsfGE-vum1EFwyGbBohZ5QID24uyaD4QqPtG4us34m0ZZz-gcgpzcnrKAgVJb05SabWeTleZKhSfE">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Categoría: Corte</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Amoladora 9" Industrial</h3>
+                        <p class="text-on-surface-variant font-body-md mb-4 line-clamp-2">Arranque progresivo y embrague electrónico de seguridad para cortes precisos en obra.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-headline-md">Bs. 1.890</span>
+                            <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Amoladora 9\" Industrial" data-price="1890">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Services (Bento Grid Style) -->
+        <section class="bg-surface-container-low py-section-padding">
+            <div class="px-gutter max-w-container-max mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline-lg text-headline-lg mb-4">Servicios Pro</h2>
+                    <p class="text-on-surface-variant font-body-lg max-w-2xl mx-auto">Mas que proveedores, somos sus aliados estratégicos en el desarrollo de infraestructura.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[400px]">
+                    <div class="md:col-span-8 bg-white p-10 tonal-border flex flex-col justify-between relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <span class="material-symbols-outlined text-primary text-5xl mb-6">local_shipping</span>
+                            <h3 class="font-headline-md text-headline-md mb-4">Entrega Rápida en Obra</h3>
+                            <p class="text-on-surface-variant font-body-md max-w-md">Contamos con logística propia para garantizar que su equipo llegue a cualquier punto del país en menos de 24 horas. Minimizamos sus tiempos muertos.</p>
+                        </div>
+                        <a href="servicios.html" class="relative z-10 w-fit text-primary font-bold uppercase tracking-widest text-label-md flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            Solicitar Servicio <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <div class="absolute -right-20 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <span class="material-symbols-outlined text-[300px]">delivery_truck_speed</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 bg-on-surface p-10 flex flex-col justify-between text-white group">
+                        <div>
+                            <span class="material-symbols-outlined text-primary-fixed text-5xl mb-6">engineering</span>
+                            <h3 class="font-headline-md text-headline-md mb-4">Asesoramiento Técnico</h3>
+                            <p class="text-surface-variant font-body-md">Ingenieros capacitados para ayudarle a elegir la maquinaria exacta para sus requerimientos técnicos y presupuesto.</p>
+                        </div>
+                        <a href="contacto.html" class="w-fit text-primary-fixed font-bold uppercase tracking-widest text-label-md flex items-center gap-2">
+                            Hablar con experto <span class="material-symbols-outlined">support_agent</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/News Section -->
+        <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+            <h2 class="font-headline-lg text-headline-lg mb-12 text-center">Noticias y Guías Técnicas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <article class="flex flex-col md:flex-row gap-6 group cursor-pointer">
+                    <div class="md:w-1/2 overflow-hidden">
+                        <img alt="Construcción" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWNY0ZzdYwPYZ2-rBQ_n3zw0bILm1Kfh9AKJVXCA3UMfzM1JBH1XUPaGC4MdDjSA5HHhHJQ_x8E-dkQGKBjtrxxt0_P5pKrjeLQMf659N-IzUa1g17ER1T4b4nJZGBKAQ9QmnzuustZI65XECSVXMOztR5UCart0YWZiC9oQT1DbUoeJ4UyPDuLOvzyp4W7fEwG5I11K8dqaYl5U31EdLVPQzU1_8vTJjP16VEmOO-8nB17ff1XV_cmckukpVErmY4AlOZ0ctQWI">
+                    </div>
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <time class="text-label-md text-primary font-bold mb-2">15 OCT, 2024</time>
+                        <h4 class="font-headline-md text-headline-md mb-4 group-hover:text-primary transition-colors">Nuevas normativas de seguridad para maquinaria pesada en Bolivia</h4>
+                        <p class="text-on-surface-variant font-body-md mb-4">Un desglose completo de las actualizaciones legales para la operación de grúas y excavadoras este año.</p>
+                        <a href="blog.html" class="font-bold text-label-md uppercase tracking-wider text-primary hover:text-primary-container">Leer más</a>
+                    </div>
+                </article>
+                <article class="flex flex-col md:flex-row gap-6 group cursor-pointer">
+                    <div class="md:w-1/2 overflow-hidden">
+                        <img alt="Ingeniería" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3gpoinL6OqKJ4V0jVeuVen9s4PSmQSUfmg3h_cL3WiTusfuF6quKPQMl0DLG5zBpBwmQyL3EgY_K9ldny3RCo1XIZmjrb1B-eQE6CfiY6WvlleUPvJ9ej-he-Hujod8ZlD-TC9jUDjuokOAlLx7NG-hoau-bm3aGnIF7Nsg47Q4MIs102QkcV7Oam6tm8CYL6Pu6OAK2LB5LBugI74XFVRk-WTd4x5XM29tVAeSmrUr2wGDYkIFJ2kOQpGo8CHGz-mtIXwnk2FtY">
+                    </div>
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <time class="text-label-md text-primary font-bold mb-2">08 OCT, 2024</time>
+                        <h4 class="font-headline-md text-headline-md mb-4 group-hover:text-primary transition-colors">Cómo optimizar el consumo de combustible en generadores industriales</h4>
+                        <p class="text-on-surface-variant font-body-md mb-4">5 consejos prácticos para extender la vida útil de sus motores y reducir costos operativos.</p>
+                        <a href="blog.html" class="font-bold text-label-md uppercase tracking-wider text-primary hover:text-primary-container">Leer más</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-surface w-full py-section-padding border-t border-outline">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto text-surface">
+            <div class="col-span-1">
+                <div class="font-headline-md text-headline-md font-bold text-surface mb-6">Equipamiento Profesional</div>
+                <p class="font-body-md text-surface-variant/80 leading-relaxed">
+                    Soluciones integrales en equipamiento industrial para el sector constructor y minero. Calidad que construye futuro.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Enlaces Rápidos</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="productos.html">Productos Destacados</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="servicios.html">Servicios Pro</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="galeria.html">Galería</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="blog.html">Noticias</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Legal y Soporte</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="contacto.html">Privacidad</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="contacto.html">Términos de Servicio</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="contacto.html">Soporte Técnico</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors hover:underline font-body-md" href="contacto.html">Contacto</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Contacto</h5>
+                <p class="text-surface-variant/80 font-body-md flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span>
+                    Av. Arce, Edificio Engineering, La Paz, Bolivia
+                </p>
+                <p class="text-surface-variant/80 font-body-md flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">call</span>
+                    +591 2 22446688
+                </p>
+                <p class="text-surface-variant/80 font-body-md flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">mail</span>
+                    contacto@equipamiento-pro.bo
+                </p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-center">
+            <p class="font-body-md text-surface-variant/60">
+                © 2024 Equipamiento Profesional. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Equipamiento Profesional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: { extend: { colors: { "on-surface": "#1a1c1c", "primary": "#705d00", "on-error-container": "#93000a", "surface": "#f9f9f9", "primary-fixed": "#ffe16d", "on-primary-fixed": "#221b00", "surface-container-highest": "#e2e2e2", "inverse-on-surface": "#f1f1f1", "background": "#f9f9f9", "surface-container-low": "#f3f3f3", "tertiary-fixed": "#e4e2e1", "surface-container": "#eeeeee", "on-tertiary-fixed": "#1b1c1c", "on-secondary-fixed-variant": "#474746", "secondary-fixed-dim": "#c8c6c5", "on-tertiary-container": "#5f5f5f", "on-secondary": "#ffffff", "surface-tint": "#705d00", "secondary": "#5f5e5e", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#c8c6c6", "primary-fixed-dim": "#e9c400", "surface-container-high": "#e8e8e8", "error": "#ba1a1a", "on-secondary-container": "#636262", "on-tertiary-fixed-variant": "#474747", "on-background": "#1a1c1c", "surface-dim": "#dadada", "inverse-surface": "#2f3131", "on-primary-container": "#705e00", "outline": "#7e775f", "on-surface-variant": "#4d4732", "tertiary-container": "#dbd9d9", "on-secondary-fixed": "#1c1b1b", "primary-container": "#ffd700", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#544600", "secondary-container": "#e2dfde", "outline-variant": "#d0c6ab", "inverse-primary": "#e9c400", "surface-bright": "#f9f9f9", "on-primary": "#ffffff", "secondary-fixed": "#e5e2e1", "surface-variant": "#e2e2e2", "error-container": "#ffdad6", "tertiary": "#5f5e5e" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .industrial-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .tonal-border { border: 1px solid #E0E0E0; }
+        .gallery-item { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+    <header class="bg-surface/95 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm">
+        <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+            <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">Equipamiento Profesional</a>
+            
+            <button id="hamburger-menu" class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <div class="hidden md:flex gap-8 items-center" id="nav-menu">
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="index.html">Inicio</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="productos.html">Productos</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="servicios.html">Servicios Pro</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="galeria.html">Galería</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Noticias</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+                <a href="productos.html" class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                    <span class="absolute top-0 right-0 bg-primary text-on-primary text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden" data-cart-count>0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+            <h1 class="font-display-lg text-display-lg mb-6">Galería de Proyectos</h1>
+            <p class="text-body-lg text-on-surface-variant max-w-3xl mb-16">
+                Obras realizadas con nuestro equipamiento. Proyectos de construcción, minería e ingeniería en toda Bolivia.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Galería Items -->
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpn7ZcCveVmQTKJXQi3yLtkwqb_J4Q_cwR--LQQgproLzmicGr78MRugGZ3N4Hy-ODFs_DjIY2l_ay4DW3dC-TKaMkKMBOvHOrSWNmKbiSW_5WaUU1YNNuB1nY7nkSmCQwb9GvcGvaO18jkUH365eL-cXBiopuRr-UpOYmOWl4pfjgEGzGeezJykNsi1Ojl52oySfLqZcL1h0NCOo94qGjVu_CCotiw6X1Qh7xwB8d-3RHyj5U8bN-1b8Rm1hEHSCqitSKd9pX7q8">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Construcción Edificio Comercial</h3>
+                        <p class="text-on-surface-variant text-sm">La Paz, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWNY0ZzdYwPYZ2-rBQ_n3zw0bILm1Kfh9AKJVXCA3UMfzM1JBH1XUPaGC4MdDjSA5HHhHJQ_x8E-dkQGKBjtrxxt0_P5pKrjeLQMf659N-IzUa1g17ER1T4b4nJZGBKAQ9QmnzuustZI65XECSVXMOztR5UCart0YWZiC9oQT1DbUoeJ4UyPDuLOvzyp4W7fEwG5I11K8dqaYl5U31EdLVPQzU1_8vTJjP16VEmOO-8nB17ff1XV_cmckukpVErmY4AlOZ0ctQWI">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Excavación y Movimiento</h3>
+                        <p class="text-on-surface-variant text-sm">Cochabamba, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3gpoinL6OqKJ4V0jVeuVen9s4PSmQSUfmg3h_cL3WiTusfuF6quKPQMl0DLG5zBpBwmQyL3EgY_K9ldny3RCo1XIZmjrb1B-eQE6CfiY6WvlleUPvJ9ej-he-Hujod8ZlD-TC9jUDjuokOAlLx7NG-hoau-bm3aGnIF7Nsg47Q4MIs102QkcV7Oam6tm8CYL6Pu6OAK2LB5LBugI74XFVRk-WTd4x5XM29tVAeSmrUr2wGDYkIFJ2kOQpGo8CHGz-mtIXwnk2FtY">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Obra de Infraestructura</h3>
+                        <p class="text-on-surface-variant text-sm">Oruro, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdiAs4Iy6bw0VK3Pt8iXs6rwboxqLOHEzFiOI7oM2saFsUk93_R1f1JXwo3uWJd5tLVyT1CQPTcGZMax9mT7ENX-lNjnpBB869-v80SlZLE3nTfvdN3o74qf8lz_73nZFxkFe-Vq4qqrryVXcj-UusI_vkNpkFwlHJrABq68oeRpStAXmdt9Y0aeqCWuXPhJEk6wpPxKV4ozvj6TUUcYGaZpeTMefX0LcHdA3lpevfkG-B5qKV9aZFdYZA_dz2V3glqa5fmAfvnYA">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Perforación Industrial</h3>
+                        <p class="text-on-surface-variant text-sm">Santa Cruz, 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvHmOfZBAg25ZYPLJx2V2tGTzewUCl-o9Gw8GzGBEb5CP2-OtB8FYXG9KgUsYhXmi2l5M21C88mrqEPnOIs416QkBia8Xpyt2mlrDNzNdkVKx8B-2uSsqlMaVcvGbrLCiG1Tc466v465RP3wZ1ZnGP9manK18f0Otfum2XTOrmRfD8ZCLV5JFccz0NVxuej1Ze2zPJCx_eFhIzylrCtADwEXZwsGu8Qa5XxZWupI_DVg9ZoTQvAP-TrHtVhiwGsr2MgQ8hsOhGRY">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Demolición Controlada</h3>
+                        <p class="text-on-surface-variant text-sm">La Paz, 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white tonal-border industrial-shadow overflow-hidden rounded cursor-pointer">
+                    <div class="h-64 bg-surface-container-low flex items-center justify-center overflow-hidden">
+                        <img alt="Proyecto 6" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5kYTgRuIrLKl2A_Hsm-YSUPYdMZ_9aKPELmBPanztifLsT1OgfDu8Yw7qj4LDCE2zbZzDIVgWmJr9_I8HkIGp1IphyUn3ESBWp0-KCf1rSwc4tGLn27s4eTIJ78Pd9-gmdBB25AY285N2y0PbVQYTYWvdT7z5uDB0j0f1DmShjkxxYym4YXqwZd2zGD8accCsfGE-vum1EFwyGbBohZ5QID24uyaD4QqPtG4us34m0ZZz-gcgpzcnrKAgVJb05SabWeTleZKhSfE">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-headline-md text-headline-md mb-2">Corte de Precisión</h3>
+                        <p class="text-on-surface-variant text-sm">Potosí, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-on-surface w-full py-section-padding border-t border-outline">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto text-surface">
+            <div class="col-span-1">
+                <div class="font-headline-md text-headline-md font-bold text-surface mb-6">Equipamiento Profesional</div>
+                <p class="font-body-md text-surface-variant/80 leading-relaxed">Soluciones integrales en equipamiento industrial.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Enlaces</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="index.html">Inicio</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="productos.html">Productos</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="servicios.html">Servicios</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Legal</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="#">Privacidad</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="#">Términos</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="contacto.html">Contacto</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Contacto</h5>
+                <p class="text-surface-variant/80 font-body-md">Av. Arce, La Paz, Bolivia</p>
+                <p class="text-surface-variant/80 font-body-md">+591 2 22446688</p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-center">
+            <p class="font-body-md text-surface-variant/60">© 2024 Equipamiento Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

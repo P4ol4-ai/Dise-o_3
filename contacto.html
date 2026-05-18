@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Equipamiento Profesional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: { extend: { colors: { "on-surface": "#1a1c1c", "primary": "#705d00", "on-error-container": "#93000a", "surface": "#f9f9f9", "primary-fixed": "#ffe16d", "on-primary-fixed": "#221b00", "surface-container-highest": "#e2e2e2", "inverse-on-surface": "#f1f1f1", "background": "#f9f9f9", "surface-container-low": "#f3f3f3", "tertiary-fixed": "#e4e2e1", "surface-container": "#eeeeee", "on-tertiary-fixed": "#1b1c1c", "on-secondary-fixed-variant": "#474746", "secondary-fixed-dim": "#c8c6c5", "on-tertiary-container": "#5f5f5f", "on-secondary": "#ffffff", "surface-tint": "#705d00", "secondary": "#5f5e5e", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#c8c6c6", "primary-fixed-dim": "#e9c400", "surface-container-high": "#e8e8e8", "error": "#ba1a1a", "on-secondary-container": "#636262", "on-tertiary-fixed-variant": "#474747", "on-background": "#1a1c1c", "surface-dim": "#dadada", "inverse-surface": "#2f3131", "on-primary-container": "#705e00", "outline": "#7e775f", "on-surface-variant": "#4d4732", "tertiary-container": "#dbd9d9", "on-secondary-fixed": "#1c1b1b", "primary-container": "#ffd700", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#544600", "secondary-container": "#e2dfde", "outline-variant": "#d0c6ab", "inverse-primary": "#e9c400", "surface-bright": "#f9f9f9", "on-primary": "#ffffff", "secondary-fixed": "#e5e2e1", "surface-variant": "#e2e2e2", "error-container": "#ffdad6", "tertiary": "#5f5e5e" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .industrial-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .tonal-border { border: 1px solid #E0E0E0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+    <header class="bg-surface/95 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm">
+        <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+            <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">Equipamiento Profesional</a>
+            
+            <button id="hamburger-menu" class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <div class="hidden md:flex gap-8 items-center" id="nav-menu">
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="index.html">Inicio</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="productos.html">Productos</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="servicios.html">Servicios Pro</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="galeria.html">Galería</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Noticias</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="contacto.html">Contacto</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+                <a href="productos.html" class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                    <span class="absolute top-0 right-0 bg-primary text-on-primary text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden" data-cart-count>0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+            <h1 class="font-display-lg text-display-lg mb-6">Contacto</h1>
+            <p class="text-body-lg text-on-surface-variant max-w-3xl mb-12">
+                Estamos aquí para ayudarte. Contacta con nuestro equipo para consultas, cotizaciones o soporte técnico.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Formulario -->
+                <div class="lg:col-span-2">
+                    <div id="form-errors"></div>
+                    
+                    <form id="contact-form" class="bg-white p-8 tonal-border industrial-shadow rounded">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="tu@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+591 2 22446688" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Asunto</label>
+                            <select name="subject" id="subject" class="form-input">
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta">Consulta General</option>
+                                <option value="cotizacion">Solicitar Cotización</option>
+                                <option value="soporte">Soporte Técnico</option>
+                                <option value="reclamo">Reclamo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div>
+                    <div class="bg-white p-8 tonal-border industrial-shadow rounded mb-8">
+                        <h3 class="font-headline-md text-headline-md mb-6">Información de Contacto</h3>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-1">location_on</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1">Dirección</h4>
+                                    <p class="text-on-surface-variant text-sm">Av. Arce, Edificio Engineering, Piso 4<br>La Paz, Bolivia</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-1">call</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1">Teléfono</h4>
+                                    <p class="text-on-surface-variant text-sm">+591 2 22446688<br>+591 72 123456 (WhatsApp)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-1">mail</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1">Email</h4>
+                                    <p class="text-on-surface-variant text-sm">contacto@equipamiento-pro.bo<br>soporte@equipamiento-pro.bo</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-1">schedule</span>
+                                <div>
+                                    <h4 class="font-bold text-on-surface mb-1">Horarios</h4>
+                                    <p class="text-on-surface-variant text-sm">Lunes a Viernes: 8:00 - 18:00<br>Sábado: 9:00 - 13:00<br>Domingo: Cerrado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary-container p-6 rounded border border-primary">
+                        <h4 class="font-headline-md text-headline-md mb-2 text-on-primary-container">¿Necesitas Ayuda Rápida?</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Llámanos o envía un WhatsApp a nuestro equipo de soporte.</p>
+                        <a href="https://wa.me/59172123456" class="inline-block px-6 py-2 bg-primary text-on-primary font-bold text-label-md uppercase rounded hover:bg-primary/90 transition-colors">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-on-surface w-full py-section-padding border-t border-outline">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto text-surface">
+            <div class="col-span-1">
+                <div class="font-headline-md text-headline-md font-bold text-surface mb-6">Equipamiento Profesional</div>
+                <p class="font-body-md text-surface-variant/80 leading-relaxed">Soluciones integrales en equipamiento industrial.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Enlaces</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="index.html">Inicio</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="productos.html">Productos</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="servicios.html">Servicios</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Legal</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="#">Privacidad</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="#">Términos</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="blog.html">Noticias</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Contacto</h5>
+                <p class="text-surface-variant/80 font-body-md">Av. Arce, La Paz, Bolivia</p>
+                <p class="text-surface-variant/80 font-body-md">+591 2 22446688</p>
+                <p class="text-surface-variant/80 font-body-md">contacto@equipamiento-pro.bo</p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-center">
+            <p class="font-body-md text-surface-variant/60">© 2024 Equipamiento Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

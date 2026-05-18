@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Equipamiento Profesional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: { extend: { colors: { "on-surface": "#1a1c1c", "primary": "#705d00", "on-error-container": "#93000a", "surface": "#f9f9f9", "primary-fixed": "#ffe16d", "on-primary-fixed": "#221b00", "surface-container-highest": "#e2e2e2", "inverse-on-surface": "#f1f1f1", "background": "#f9f9f9", "surface-container-low": "#f3f3f3", "tertiary-fixed": "#e4e2e1", "surface-container": "#eeeeee", "on-tertiary-fixed": "#1b1c1c", "on-secondary-fixed-variant": "#474746", "secondary-fixed-dim": "#c8c6c5", "on-tertiary-container": "#5f5f5f", "on-secondary": "#ffffff", "surface-tint": "#705d00", "secondary": "#5f5e5e", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#c8c6c6", "primary-fixed-dim": "#e9c400", "surface-container-high": "#e8e8e8", "error": "#ba1a1a", "on-secondary-container": "#636262", "on-tertiary-fixed-variant": "#474747", "on-background": "#1a1c1c", "surface-dim": "#dadada", "inverse-surface": "#2f3131", "on-primary-container": "#705e00", "outline": "#7e775f", "on-surface-variant": "#4d4732", "tertiary-container": "#dbd9d9", "on-secondary-fixed": "#1c1b1b", "primary-container": "#ffd700", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#544600", "secondary-container": "#e2dfde", "outline-variant": "#d0c6ab", "inverse-primary": "#e9c400", "surface-bright": "#f9f9f9", "on-primary": "#ffffff", "secondary-fixed": "#e5e2e1", "surface-variant": "#e2e2e2", "error-container": "#ffdad6", "tertiary": "#5f5e5e" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .industrial-shadow { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .tonal-border { border: 1px solid #E0E0E0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+    <header class="bg-surface/95 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm">
+        <nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+            <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">Equipamiento Profesional</a>
+            
+            <button id="hamburger-menu" class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <div class="hidden md:flex gap-8 items-center" id="nav-menu">
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="index.html">Inicio</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="productos.html">Productos</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="servicios.html">Servicios Pro</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="galeria.html">Galería</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Noticias</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                    <span class="absolute top-0 right-0 bg-primary text-on-primary text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden" data-cart-count>0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Página de Productos y Carrito -->
+        <div class="max-w-container-max mx-auto px-gutter py-section-padding grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Catálogo de Productos -->
+            <div class="lg:col-span-2">
+                <h1 class="font-headline-lg text-headline-lg mb-8">Catálogo de Productos</h1>
+                
+                <div class="product-grid">
+                    <!-- Producto 1 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Taladro Industrial" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdiAs4Iy6bw0VK3Pt8iXs6rwboxqLOHEzFiOI7oM2saFsUk93_R1f1JXwo3uWJd5tLVyT1CQPTcGZMax9mT7ENX-lNjnpBB869-v80SlZLE3nTfvdN3o74qf8lz_73nZFxkFe-Vq4qqrryVXcj-UusI_vkNpkFwlHJrABq68oeRpStAXmdt9Y0aeqCWuXPhJEk6wpPxKV4ozvj6TUUcYGaZpeTMefX0LcHdA3lpevfkG-B5qKV9aZFdYZA_dz2V3glqa5fmAfvnYA">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Perforación</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Taladro Industrial XR</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Motor sin escobillas de alto par para trabajos continuos.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 3.450</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Taladro Industrial XR" data-price="3450">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Martillo Profesional" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvHmOfZBAg25ZYPLJx2V2tGTzewUCl-o9Gw8GzGBEb5CP2-OtB8FYXG9KgUsYhXmi2l5M21C88mrqEPnOIs416QkBia8Xpyt2mlrDNzNdkVKx8B-2uSsqlMaVcvGbrLCiG1Tc466v465RP3wZ1ZnGP9manK18f0Otfum2XTOrmRfD8ZCLV5JFccz0NVxuej1Ze2zPJCx_eFhIzylrCtADwEXZwsGu8Qa5XxZWupI_DVg9ZoTQvAP-TrHtVhiwGsr2MgQ8hsOhGRY">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Demolición</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Martillo Neumático Pro</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Fuerza de impacto de 25 Julios para concreto armado.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 5.120</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Martillo Neumático Pro" data-price="5120">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Amoladora Angular" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5kYTgRuIrLKl2A_Hsm-YSUPYdMZ_9aKPELmBPanztifLsT1OgfDu8Yw7qj4LDCE2zbZzDIVgWmJr9_I8HkIGp1IphyUn3ESBWp0-KCf1rSwc4tGLn27s4eTIJ78Pd9-gmdBB25AY285N2y0PbVQYTYWvdT7z5uDB0j0f1DmShjkxxYym4YXqwZd2zGD8accCsfGE-vum1EFwyGbBohZ5QID24uyaD4QqPtG4us34m0ZZz-gcgpzcnrKAgVJb05SabWeTleZKhSfE">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Corte</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Amoladora 9" Industrial</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Arranque progresivo y embrague electrónico de seguridad.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 1.890</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Amoladora 9\" Industrial" data-price="1890">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Compresor" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="/img/img4.jpg">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Compresión</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Compresor 250L Industrial</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Motor de 5.5 HP para trabajos continuo de construcción.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 8.950</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Compresor 250L Industrial" data-price="8950">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Sierra Circular" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="/img/img5.jpg">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Corte</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Sierra Circular 7.25" Pro</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Potencia de 1200W para cortes rápidos y precisos.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 2.340</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Sierra Circular 7.25\" Pro" data-price="2340">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="bg-white tonal-border industrial-shadow group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-64 bg-surface-container-low flex items-center justify-center p-8 overflow-hidden">
+                            <img alt="Nivel Láser" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" src="/img/img6.webp">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2 block">Medición</span>
+                            <h3 class="font-headline-md text-headline-md mb-2">Nivel Láser Digital</h3>
+                            <p class="text-on-surface-variant font-body-md mb-4">Precisión de ±3mm a 30m para trabajos de nivelación.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-headline-md">Bs. 1.250</span>
+                                <button class="p-3 bg-on-surface text-white hover:bg-secondary transition-colors add-to-cart-btn" data-product="Nivel Láser Digital" data-price="1250">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrito Lateral -->
+            <div class="lg:col-span-1">
+                <div class="bg-white tonal-border industrial-shadow sticky top-24 rounded">
+                    <div class="bg-primary-container p-4 text-on-primary-container font-bold text-headline-md rounded-t">
+                        Carrito de Compras
+                    </div>
+                    
+                    <div id="cart-items" class="border-b border-outline-variant max-h-96 overflow-y-auto">
+                        <p class="text-center text-on-surface-variant py-8">El carrito está vacío</p>
+                    </div>
+
+                    <div id="cart-total" class="p-4 bg-primary-container">
+                        <!-- El JavaScript actualiza esto -->
+                    </div>
+
+                    <div class="p-4 border-t border-outline-variant">
+                        <button id="empty-cart" class="w-full py-2 px-4 bg-error text-on-error font-bold rounded hover:bg-error/90 transition-colors">
+                            Vaciar Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-on-surface w-full py-section-padding border-t border-outline">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto text-surface">
+            <div class="col-span-1">
+                <div class="font-headline-md text-headline-md font-bold text-surface mb-6">Equipamiento Profesional</div>
+                <p class="font-body-md text-surface-variant/80 leading-relaxed">Soluciones integrales en equipamiento industrial.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Enlaces</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="index.html">Inicio</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="servicios.html">Servicios</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="blog.html">Noticias</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Legal</h5>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="contacto.html">Privacidad</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="contacto.html">Términos</a>
+                <a class="text-surface-variant/80 hover:text-primary-fixed transition-colors font-body-md" href="contacto.html">Contacto</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h5 class="text-primary-fixed font-bold text-label-md uppercase tracking-widest mb-2">Contacto</h5>
+                <p class="text-surface-variant/80 font-body-md">Av. Arce, La Paz, Bolivia</p>
+                <p class="text-surface-variant/80 font-body-md">+591 2 22446688</p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-center">
+            <p class="font-body-md text-surface-variant/60">© 2024 Equipamiento Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
